@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "source_code_sha256": "8902cbbb407a193aac687dac58d31bdf89f24d3d9628c590a249c194ee25300e",
+  "seed": 919,
+  "artificial_events": 246,
+  "artificial_units": 2,
+  "mesh_nodes": [
+    201,
+    241
+  ],
+  "finite_difference_step": 1e-05,
+  "scaled_error_tolerance": 1e-05,
+  "scaled_error_definition": "abs(gradient - finite_difference) / max(1, abs(finite_difference))",
+  "maximum_constant_intensity_likelihood_error_nats": 4.547473508864641e-13,
+  "cases": [
+    {
+      "width_rule": "constant",
+      "objective_absolute_difference_nats": 0.0,
+      "maximum_gradient_absolute_error": 1.3174906143831322e-07,
+      "maximum_gradient_scaled_error": 4.199913407410269e-10,
+      "profile_c_envelope_maximum_scaled_error": 9.800984477824891e-10,
+      "gradient": [
+        166.3203089155914,
+        139.86925383197632,
+        -313.69470918421905,
+        -59.944991381439394,
+        -75.47076936722888
+      ],
+      "finite_difference": [
+        166.32030894925265,
+        139.86925382596382,
+        -313.69470905247,
+        -59.94499138068931,
+        -75.47076936589292
+      ]
+    },
+    {
+      "width_rule": "amplitude-positive",
+      "objective_absolute_difference_nats": 0.0,
+      "maximum_gradient_absolute_error": 1.0795677951591642e-07,
+      "maximum_gradient_scaled_error": 9.185714076119458e-10,
+      "profile_c_envelope_maximum_scaled_error": 4.785881021336556e-10,
+      "gradient": [
+        187.7607304908825,
+        244.7043182329898,
+        -117.52682341348165,
+        -86.22763862771049,
+        200.98004713240482,
+        466.23574691259745
+      ],
+      "finite_difference": [
+        187.76073050048578,
+        244.70431822010138,
+        -117.52682330552487,
+        -86.22763864423177,
+        200.9800471114431,
+        466.2357468532718
+      ]
+    },
+    {
+      "width_rule": "amplitude-negative",
+      "objective_absolute_difference_nats": 6.821210263296962e-13,
+      "maximum_gradient_absolute_error": 9.77134817503611e-08,
+      "maximum_gradient_scaled_error": 8.544388115290024e-10,
+      "profile_c_envelope_maximum_scaled_error": 6.461610301016125e-10,
+      "gradient": [
+        102.58496589024448,
+        -17.193136576833865,
+        -228.61137846871554,
+        -82.30903071472441,
+        -114.3598351905556,
+        492.9906066156921
+      ],
+      "finite_difference": [
+        102.58496586175168,
+        -17.19313659123145,
+        -228.61137854306432,
+        -82.30903068806583,
+        -114.35983528826908,
+        492.99060656267096
+      ]
+    },
+    {
+      "width_rule": "latitude-positive",
+      "objective_absolute_difference_nats": 0.0,
+      "maximum_gradient_absolute_error": 7.500241281377384e-07,
+      "maximum_gradient_scaled_error": 1.1905636670024613e-09,
+      "profile_c_envelope_maximum_scaled_error": 9.76152925447123e-10,
+      "gradient": [
+        107.05464104007862,
+        120.62341772549996,
+        -117.00131952307112,
+        -77.36597157118035,
+        109.38765363655978,
+        629.9739777202014
+      ],
+      "finite_difference": [
+        107.05464108013983,
+        120.62341772889339,
+        -117.00131949510249,
+        -77.3659715832764,
+        109.38765362880075,
+        629.9739769701773
+      ]
+    },
+    {
+      "width_rule": "latitude-negative",
+      "objective_absolute_difference_nats": 9.094947017729282e-13,
+      "maximum_gradient_absolute_error": 8.842284131560518e-07,
+      "maximum_gradient_scaled_error": 1.7616268616526913e-08,
+      "profile_c_envelope_maximum_scaled_error": 3.548997663886027e-09,
+      "gradient": [
+        156.19502664730936,
+        122.47574158304303,
+        -163.7634243573529,
+        -111.54680144764339,
+        -21.614668850215054,
+        91.77485960915925
+      ],
+      "finite_difference": [
+        156.19502669323992,
+        122.47574156845074,
+        -163.76342468902294,
+        -111.54680144045413,
+        -21.614669230984873,
+        91.77486049338766
+      ]
+    }
+  ],
+  "scope": "Selected interior parameter cases, not a proof over the entire parameter domain; no fitting or forecasting benchmark."
+}
