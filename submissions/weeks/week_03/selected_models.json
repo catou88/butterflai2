@@ -1,0 +1,50 @@
+{
+  "status": "COMPLETE",
+  "models": [
+    {
+      "model": "boost_raw_15",
+      "artifact": "data/derived/week03_ml_comparison/final_boost_raw_15.joblib",
+      "artifact_sha256": "b736d308ec9ed35ccb10ffb610e2894a3607e9e89883ba50246f78aea263721c",
+      "fit_seconds": 3.462590374998399,
+      "train_events": 16611,
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "features": "raw",
+      "heldout_score_added": false
+    },
+    {
+      "model": "boost_drift_residual",
+      "artifact": "data/derived/week03_ml_comparison/final_boost_drift_residual.joblib",
+      "artifact_sha256": "fdbc4da2ac6c07179f63973d09af40942bed02c4dc45f90fdf47eb357f6070e7",
+      "fit_seconds": 2.586467333007022,
+      "train_events": 16611,
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "features": "residual",
+      "heldout_score_added": false
+    }
+  ],
+  "core_metrics_sha256": "c77c47201e21aeff6154ca57fcfa2402092cb60489966eb82f54695111cca31c",
+  "comparison_metrics_sha256": "e3cc46b57152e8d4e2afa59bda5b4d01fd069b93eaa069c015b42c7fc0b4b6fc",
+  "source_sha256": "13b672fdd26cddcee5484f83cd6015a888c8659490bf7b38b30d2b91ad882b99",
+  "choice": "Raw15 is LOCO point winner; residual is within paired SE and wins secondary3fold. Retain both as finalists.",
+  "scope": "Full-development refits only; no new validation claim, sealed cycles excluded, no magnetic-strength measurement."
+}

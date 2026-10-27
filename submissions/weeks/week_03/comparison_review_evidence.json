@@ -1,0 +1,386 @@
+{
+  "status": "PASS",
+  "source_script_sha256": "b8b4ddbe641620acbae3a68f02d00704c6e2bda65ff041f7ad82aa74b2d6c056",
+  "comparison_metrics_sha256": "e3cc46b57152e8d4e2afa59bda5b4d01fd069b93eaa069c015b42c7fc0b4b6fc",
+  "scope": "Independent raw-event reconstruction, fold/cohort and stored-surface score/moment/KS audit; no independent model refitting.",
+  "fit_artifacts": 72,
+  "wing_predictions_recomputed": 216,
+  "maximum_errors": {
+    "nll": 0.0,
+    "count": 0.0,
+    "centroid": 1.4210854715202004e-14,
+    "spread": 2.4868995751603507e-14,
+    "KS": 2.530198273120732e-13,
+    "physical_event_pair": 0.0,
+    "LOCO_origin": 0.0
+  },
+  "fold_audits": [
+    {
+      "protocol": "3fold",
+      "fold": "12,15,19",
+      "train_cycles": [
+        13,
+        14,
+        17,
+        18,
+        21,
+        23
+      ],
+      "held_cycles": [
+        12,
+        15,
+        19
+      ],
+      "train_wings": 12,
+      "held_wings": 6,
+      "dense_training_cells": 581292,
+      "zero_training_cells": 570779,
+      "training_events": 11220,
+      "independent_secondary_mu_b_difference_years": 1.4206126586202572e-07,
+      "independent_secondary_origin_difference_years": 3.176273821736686e-08
+    },
+    {
+      "protocol": "3fold",
+      "fold": "13,17,21",
+      "train_cycles": [
+        12,
+        14,
+        15,
+        18,
+        19,
+        23
+      ],
+      "held_cycles": [
+        13,
+        17,
+        21
+      ],
+      "train_wings": 12,
+      "held_wings": 6,
+      "dense_training_cells": 581292,
+      "zero_training_cells": 571041,
+      "training_events": 10950,
+      "independent_secondary_mu_b_difference_years": 1.2452489883685303e-07,
+      "independent_secondary_origin_difference_years": 1.7224238035851158e-08
+    },
+    {
+      "protocol": "3fold",
+      "fold": "14,18,23",
+      "train_cycles": [
+        12,
+        13,
+        15,
+        17,
+        19,
+        21
+      ],
+      "held_cycles": [
+        14,
+        18,
+        23
+      ],
+      "train_wings": 12,
+      "held_wings": 6,
+      "dense_training_cells": 581292,
+      "zero_training_cells": 570971,
+      "training_events": 11052,
+      "independent_secondary_mu_b_difference_years": 7.624821840579443e-08,
+      "independent_secondary_origin_difference_years": 1.786111170076765e-08
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "12",
+      "train_cycles": [
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        12
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 760625,
+      "training_events": 15422,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "13",
+      "train_cycles": [
+        12,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        13
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761036,
+      "training_events": 15045,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "14",
+      "train_cycles": [
+        12,
+        13,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        14
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 760705,
+      "training_events": 15358,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "15",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        15
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 760914,
+      "training_events": 15120,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "17",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        18,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        17
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761382,
+      "training_events": 14590,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "18",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "held_cycles": [
+        18
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761609,
+      "training_events": 14340,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "19",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        21,
+        23
+      ],
+      "held_cycles": [
+        19
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761999,
+      "training_events": 13900,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "21",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        23
+      ],
+      "held_cycles": [
+        21
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761448,
+      "training_events": 14537,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    },
+    {
+      "protocol": "LOCO",
+      "fold": "23",
+      "train_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21
+      ],
+      "held_cycles": [
+        23
+      ],
+      "train_wings": 16,
+      "held_wings": 2,
+      "dense_training_cells": 775056,
+      "zero_training_cells": 761448,
+      "training_events": 14576,
+      "independent_secondary_mu_b_difference_years": 0.0,
+      "independent_secondary_origin_difference_years": 0.0
+    }
+  ],
+  "raw15_vs_residual": {
+    "mean_NLL_difference_A_minus_B": -0.11513094738653365,
+    "median_difference": 0.17129288677007892,
+    "SE_9_cycle_means": 0.17958053363005824,
+    "better_wings_A": 8,
+    "better_cycles_A": 4,
+    "wing_differences": {
+      "12N": 0.7765124328895836,
+      "12S": 0.2768473745309432,
+      "13N": 0.29949389513953584,
+      "13S": -0.09550102162679863,
+      "14N": -1.3934449133058644,
+      "14S": -0.768054552599645,
+      "15N": -0.3314668560809295,
+      "15S": -0.6921370486964147,
+      "17N": -0.14981910629112605,
+      "17S": -0.5423845943340027,
+      "18N": 0.3954146843781601,
+      "18S": 0.3327005591335066,
+      "19N": 0.23578004299069732,
+      "19S": 0.24737204184697248,
+      "21N": 0.30714009620218974,
+      "21S": 0.20688475333695777,
+      "23N": 0.13570102020320007,
+      "23S": -1.3133958606745715
+    },
+    "cycle_differences": {
+      "12": 0.5266799037102634,
+      "13": 0.1019964367563686,
+      "14": -1.0807497329527547,
+      "15": -0.5118019523886721,
+      "17": -0.34610185031256435,
+      "18": 0.36405762175583334,
+      "19": 0.2415760424188349,
+      "21": 0.25701242476957376,
+      "23": -0.5888474202356857
+    }
+  },
+  "raw15_vs_amplitude_belt": {
+    "mean_NLL_difference_A_minus_B": -0.8869017935813028,
+    "median_difference": -0.7185521000452031,
+    "SE_9_cycle_means": 0.4929540319467682,
+    "better_wings_A": 12,
+    "better_cycles_A": 7,
+    "wing_differences": {
+      "12N": 1.438814168929111,
+      "12S": -2.889231789039714,
+      "13N": 0.9326405025450342,
+      "13S": 0.16797412345921003,
+      "14N": -5.608449597005366,
+      "14S": -3.033992571075935,
+      "15N": -5.251680500543321,
+      "15S": 3.098613163241895,
+      "17N": -1.3492851149098968,
+      "17S": -1.378397232259168,
+      "18N": -0.014144141153508372,
+      "18S": 1.517158899118158,
+      "19N": 3.93142652668098,
+      "19S": -4.124369207225769,
+      "21N": -0.011431198030685152,
+      "21S": -1.9527741171040702,
+      "23N": -0.5022068373755992,
+      "23S": -0.934897362714807
+    },
+    "cycle_differences": {
+      "12": -0.7252088100553016,
+      "13": 0.5503073130021221,
+      "14": -4.32122108404065,
+      "15": -1.076533668650713,
+      "17": -1.3638411735845324,
+      "18": 0.7515073789823248,
+      "19": -0.09647134027239446,
+      "21": -0.9821026575673777,
+      "23": -0.7185521000452031
+    }
+  },
+  "secondary_clock_max_timescale_difference_years": 1.4206126586202572e-07,
+  "secondary_clock_max_origin_difference_years": 3.176273821736686e-08,
+  "config_checks": "six fixed candidate definitions match results manifest and current script SHA; Poisson loss; early stopping disabled. Historical freeze claim supported by saved config, not independently attested external preregistration."
+}

@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "created_UTC": "2026-10-27T01:12:25.186929+00:00",
+  "script_sha256": "b8b4ddbe641620acbae3a68f02d00704c6e2bda65ff041f7ad82aa74b2d6c056",
+  "core_metrics_sha256": "c77c47201e21aeff6154ca57fcfa2402092cb60489966eb82f54695111cca31c",
+  "catalog_sha256": "be5b107506ab82fcf9658b961f798dbca338854924af22d04b0756d277061dcf",
+  "configs": {
+    "uniform_area": {
+      "kind": "uniform",
+      "features": "area",
+      "alpha": 0.0
+    },
+    "boost_time_only": {
+      "kind": "boost",
+      "features": "time",
+      "leaves": 15,
+      "iterations": 120
+    },
+    "poisson_tree": {
+      "kind": "tree",
+      "features": "raw",
+      "depth": 6,
+      "leaves": 64,
+      "min_leaf": 1500
+    },
+    "boost_raw_15": {
+      "kind": "boost",
+      "features": "raw",
+      "leaves": 15,
+      "iterations": 120
+    },
+    "boost_raw_31": {
+      "kind": "boost",
+      "features": "raw",
+      "leaves": 31,
+      "iterations": 160
+    },
+    "boost_drift_residual": {
+      "kind": "boost",
+      "features": "residual",
+      "leaves": 15,
+      "iterations": 120
+    }
+  },
+  "common_boost": {
+    "loss": "poisson",
+    "learning_rate": 0.08,
+    "min_samples_leaf": 1500,
+    "l2_regularization": 1.0,
+    "max_bins": 255,
+    "early_stopping": false,
+    "random_state": 42
+  },
+  "sklearn": "1.8.0",
+  "numpy": "2.5.2",
+  "scipy": "1.17.0",
+  "python": "3.13.11",
+  "mesh": [
+    201,
+    241
+  ],
+  "window": [
+    -6,
+    11
+  ],
+  "latitude": [
+    0,
+    60
+  ],
+  "intensity_floor": 1e-10,
+  "selection": "Fixed settings frozen before supplemental ML scores; exploratory model comparison, no tuning on test folds",
+  "intensity": "Piecewise constant on fixed mesh Voronoi cells; event assignment and integral exact for that intensity"
+}

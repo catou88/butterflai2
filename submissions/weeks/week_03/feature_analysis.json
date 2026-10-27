@@ -1,0 +1,1860 @@
+{
+  "analysis": "Homework 3 supplementary feature design review",
+  "input_metrics_sha256": "c77c47201e21aeff6154ca57fcfa2402092cb60489966eb82f54695111cca31c",
+  "catalog_sha256": "be5b107506ab82fcf9658b961f798dbca338854924af22d04b0756d277061dcf",
+  "scope": "Exposure-weighted predictor geometry on every original quadrature node for each LOCO training wing. No supplementary model fitting or accuracy estimation performed by this analysis.",
+  "model_feature_sets": {
+    "raw": [
+      "s",
+      "abs_latitude",
+      "log_area_amplitude"
+    ],
+    "physics_residual": [
+      "s",
+      "latitude_residual",
+      "log_area_amplitude"
+    ],
+    "redundant_all_five": [
+      "s",
+      "abs_latitude",
+      "log_area_amplitude",
+      "mu_train",
+      "latitude_residual"
+    ]
+  },
+  "feature_definitions": {
+    "s": "Years from own estimated 15-degree crossing; held-out clock conditional on its own observations.",
+    "abs_latitude": "Absolute heliographic latitude in degrees.",
+    "log_area_amplitude": "Natural log of same-wing full-cycle retrospective smoothed peak area summary.",
+    "mu_train": "15 * exp(-s / train_fold_alignment_mu_b), in degrees.",
+    "latitude_residual": "abs_latitude - mu_train, in degrees."
+  },
+  "weighting": "Tensor-product trapezoid weights. Each wing has 1020 degree-years of domain exposure. Equivalent to node-centered midpoint/Voronoi cell areas including half-width edge cells.",
+  "VIF_method": "For each centered standardized predictor, regress linearly on all other predictors using its exposure-weighted correlation matrix; VIF=1/(1-R_squared). Residual variance below 1e-10 is classified as infinite.",
+  "rank_method": "Number of standardized correlation eigenvalues greater than 1e-10. Condition number is square root of largest/smallest eigenvalue for full-rank bases.",
+  "folds": [
+    {
+      "held_cycle": 12,
+      "training_cycles": [
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.052276980661649,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              1.8210092543877078e-13
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              3.6559207908827156e-13
+            ],
+            [
+              1.821009254387708e-13,
+              3.785647012494683e-13,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000004199,
+          "correlation_eigenvalues": [
+            0.9999999999995796,
+            1.0000000000000018,
+            1.0000000000004192
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.3942025908427658,
+              1.8210092543877078e-13
+            ],
+            [
+              0.3942025908427658,
+              1.0000000000000002,
+              2.0186696912907565e-13
+            ],
+            [
+              1.821009254387708e-13,
+              2.0186696912907563e-13,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 1.1839863702218674,
+            "latitude_residual": 1.1839863702218674,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5170477018774655,
+          "correlation_eigenvalues": [
+            0.6057974091572342,
+            1.0000000000000002,
+            1.394202590842766
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              1.8210092543877078e-13,
+              -0.9658123922996241,
+              0.3942025908427658
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              3.6559207908827156e-13,
+              -4.0937676408924056e-13,
+              0.9129119804576411
+            ],
+            [
+              1.821009254387708e-13,
+              3.785647012494683e-13,
+              1.0000000000000002,
+              1.6209110274033325e-12,
+              2.0186696912907563e-13
+            ],
+            [
+              -0.9658123922996246,
+              -4.098005495593122e-13,
+              1.6169543690776938e-12,
+              1.0,
+              -0.40815648461994714
+            ],
+            [
+              0.3942025908427658,
+              0.912911980457641,
+              2.0186696912907565e-13,
+              -0.4081564846199465,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 14.879530216582724,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -4.965726345796255e-14,
+            0.035648670813715734,
+            0.9999999999999999,
+            1.5840130337796745,
+            2.38033829540666
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 13,
+      "training_cycles": [
+        12,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 7.945152029047319,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -1.5848495220663618e-13
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -7.960831700600089e-13
+            ],
+            [
+              -1.5848495220663618e-13,
+              -7.960831700600089e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000008114,
+          "correlation_eigenvalues": [
+            0.9999999999991886,
+            1.0000000000000009,
+            1.0000000000008114
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.39814294634883357,
+              -1.5848495220663618e-13
+            ],
+            [
+              0.39814294634883357,
+              1.0,
+              -3.731855817069116e-13
+            ],
+            [
+              -1.5848495220663618e-13,
+              -3.7318558170691164e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.1883792750532813,
+            "latitude_residual": 1.1883792750532816,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5241549140444262,
+          "correlation_eigenvalues": [
+            0.6018570536511664,
+            1.0,
+            1.3981429463488335
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -1.5848495220663618e-13,
+              -0.9649593907147997,
+              0.39814294634883357
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -7.960831700600089e-13,
+              7.194800057780903e-14,
+              0.9109119825185323
+            ],
+            [
+              -1.5848495220663618e-13,
+              -7.960831700600089e-13,
+              1.0,
+              -9.436366641897897e-13,
+              -3.7318558170691164e-13
+            ],
+            [
+              -0.9649593907147999,
+              7.194800057780903e-14,
+              -9.497562275113836e-13,
+              0.9999999999999999,
+              -0.4126007272219997
+            ],
+            [
+              0.39814294634883357,
+              0.9109119825185322,
+              -3.731855817069116e-13,
+              -0.4126007272219997,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 14.52361646155916,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -9.856079768339194e-15,
+            0.03657174747360925,
+            1.0000000000000004,
+            1.5794644440156982,
+            2.3839638085107033
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 14,
+      "training_cycles": [
+        12,
+        13,
+        15,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 7.967588835787489,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -5.6217377712658675e-14
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -3.539639708463161e-13
+            ],
+            [
+              -5.621737771265868e-14,
+              -3.4098529191528453e-13,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000003455,
+          "correlation_eigenvalues": [
+            0.9999999999996543,
+            1.0000000000000007,
+            1.0000000000003453
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.397311149712053,
+              -5.6217377712658675e-14
+            ],
+            [
+              0.397311149712053,
+              1.0,
+              -1.6290310914537549e-13
+            ],
+            [
+              -5.621737771265868e-14,
+              -1.6290310914537549e-13,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.187445588573216,
+            "latitude_residual": 1.1874455885732162,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5226496383539756,
+          "correlation_eigenvalues": [
+            0.6026888502879469,
+            0.9999999999999999,
+            1.397311149712053
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -5.6217377712658675e-14,
+              -0.9651405972670289,
+              0.397311149712053
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -3.539639708463161e-13,
+              2.7683854630398438e-14,
+              0.9113368611443837
+            ],
+            [
+              -5.621737771265868e-14,
+              -3.4098529191528453e-13,
+              0.9999999999999999,
+              -4.192292810944106e-13,
+              -1.6290310914537549e-13
+            ],
+            [
+              -0.9651405972670288,
+              2.7683854630398438e-14,
+              -4.1922928109441054e-13,
+              1.0,
+              -0.41166142097549374
+            ],
+            [
+              0.397311149712053,
+              0.9113368611443837,
+              -1.6290310914537549e-13,
+              -0.41166142097549374,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 14.597767102142782,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -4.087150950585692e-14,
+            0.036375520548731846,
+            0.9999999999999998,
+            1.5804256686940352,
+            2.383198810757274
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 15,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        17,
+        18,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.017949226537574,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -2.458191716318906e-13
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -1.0560777174180843e-12
+            ],
+            [
+              -2.458191716318906e-13,
+              -1.0441995426822981e-12,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.000000000001073,
+          "correlation_eigenvalues": [
+            0.9999999999989263,
+            1.0000000000000009,
+            1.000000000001072
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.3954567415481945,
+              -2.458191716318906e-13
+            ],
+            [
+              0.3954567415481945,
+              0.9999999999999998,
+              -5.176752201228516e-13
+            ],
+            [
+              -2.458191716318906e-13,
+              -5.181677750420931e-13,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.1853762986620873,
+            "latitude_residual": 1.1853762986620873,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5193033582793503,
+          "correlation_eigenvalues": [
+            0.6045432584518053,
+            0.9999999999999999,
+            1.3954567415481944
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -2.458191716318906e-13,
+              -0.965542379987803,
+              0.3954567415481945
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -1.0560777174180843e-12,
+              -9.284671156657167e-14,
+              0.9122789034806423
+            ],
+            [
+              -2.458191716318906e-13,
+              -1.0441995426822981e-12,
+              0.9999999999999999,
+              -8.382234300891509e-13,
+              -5.181677750420931e-13
+            ],
+            [
+              -0.965542379987803,
+              -9.284671156657167e-14,
+              -8.382234300891509e-13,
+              1.0,
+              -0.40956953288089565
+            ],
+            [
+              0.3954567415481945,
+              0.9122789034806422,
+              -5.176752201228516e-13,
+              -0.4095695328808954,
+              0.9999999999999998
+            ]
+          ],
+          "VIF": {
+            "s": 14.764961208204237,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -2.4543035897950926e-14,
+            0.035940691648886455,
+            0.9999999999999992,
+            1.5825666329844716,
+            2.3814926753666663
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 17,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        15,
+        18,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.13015020716803,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -7.157555337608172e-14
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -4.2054098118856705e-13
+            ],
+            [
+              -7.157555337608172e-14,
+              -4.087999893279725e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000004148,
+          "correlation_eigenvalues": [
+            0.9999999999995853,
+            1.0000000000000009,
+            1.0000000000004148
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.391386819720649,
+              -7.157555337608172e-14
+            ],
+            [
+              0.391386819720649,
+              1.0000000000000002,
+              -2.00062150977792e-13
+            ],
+            [
+              -7.157555337608172e-14,
+              -2.0006215097779197e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.1808935801979552,
+            "latitude_residual": 1.1808935801979552,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5120051342374234,
+          "correlation_eigenvalues": [
+            0.6086131802793511,
+            0.9999999999999999,
+            1.3913868197206494
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -7.157555337608172e-14,
+              -0.9664135891719284,
+              0.391386819720649
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -4.2054098118856705e-13,
+              6.245288641764048e-14,
+              0.9143215816049711
+            ],
+            [
+              -7.157555337608172e-14,
+              -4.087999893279725e-13,
+              1.0,
+              -6.048415616662303e-13,
+              -2.0006215097779197e-13
+            ],
+            [
+              -0.9664135891719284,
+              6.245288641764048e-14,
+              -6.048415616662303e-13,
+              0.9999999999999999,
+              -0.4049889448015
+            ],
+            [
+              0.391386819720649,
+              0.9143215816049711,
+              -2.00062150977792e-13,
+              -0.4049889448014992,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 15.141243271556641,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -4.681151428151544e-14,
+            0.03499904709065192,
+            0.9999999999999998,
+            1.5872559164724889,
+            2.3777450364369077
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 18,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        19,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "19N",
+        "19S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.032975447893374,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              2.917781526424518e-13
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              7.361992851604715e-13
+            ],
+            [
+              2.917781526424518e-13,
+              7.483042061421834e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000008027,
+          "correlation_eigenvalues": [
+            0.999999999999197,
+            1.0000000000000016,
+            1.0000000000008022
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.39490678359012615,
+              2.917781526424518e-13
+            ],
+            [
+              0.39490678359012615,
+              0.9999999999999998,
+              3.8612291612889394e-13
+            ],
+            [
+              2.917781526424518e-13,
+              3.856208057047991e-13,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 1.184765855618116,
+            "latitude_residual": 1.1847658556181158,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5183134913236267,
+          "correlation_eigenvalues": [
+            0.6050932164098737,
+            1.0,
+            1.394906783590126
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              2.917781526424518e-13,
+              -0.965660953376989,
+              0.39490678359012615
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              7.361992851604715e-13,
+              -2.198554505966081e-14,
+              0.9125569135705354
+            ],
+            [
+              2.917781526424518e-13,
+              7.483042061421834e-13,
+              1.0,
+              1.2278047655295179e-12,
+              3.856208057047991e-13
+            ],
+            [
+              -0.965660953376989,
+              -2.198554505966081e-14,
+              1.2278047655295179e-12,
+              1.0,
+              -0.4089497273439835
+            ],
+            [
+              0.39490678359012615,
+              0.9125569135705353,
+              3.8612291612889394e-13,
+              -0.4089497273439833,
+              0.9999999999999998
+            ]
+          ],
+          "VIF": {
+            "s": 14.815051170172499,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -4.1723980679991405e-14,
+            0.035812433658382194,
+            0.9999999999999998,
+            1.583201048070487,
+            2.3809865182711736
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 19,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        21,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "21N",
+        "21S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.10815388690897,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -8.853697755085158e-14
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -4.844569883215635e-13
+            ],
+            [
+              -8.853697755085159e-14,
+              -4.703962314045789e-13,
+              0.9999999999999998
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.000000000000479,
+          "correlation_eigenvalues": [
+            0.9999999999995204,
+            1.0000000000000007,
+            1.0000000000004783
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.3921780838537168,
+              -8.853697755085158e-14
+            ],
+            [
+              0.39217808385371683,
+              1.0,
+              -2.815429226860307e-13
+            ],
+            [
+              -8.853697755085159e-14,
+              -2.815429226860307e-13,
+              0.9999999999999998
+            ]
+          ],
+          "VIF": {
+            "s": 1.1817588191631243,
+            "latitude_residual": 1.1817588191631243,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.513419127961418,
+          "correlation_eigenvalues": [
+            0.6078219161462831,
+            0.9999999999999998,
+            1.3921780838537168
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -8.853697755085158e-14,
+              -0.9662453466251786,
+              0.3921780838537168
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -4.844569883215635e-13,
+              5.2476470867421466e-14,
+              0.9139271036731297
+            ],
+            [
+              -8.853697755085159e-14,
+              -4.703962314045789e-13,
+              0.9999999999999998,
+              -5.871672640845885e-13,
+              -2.815429226860307e-13
+            ],
+            [
+              -0.9662453466251786,
+              5.247647086742147e-14,
+              -5.871672640845885e-13,
+              1.0,
+              -0.40587836745961436
+            ],
+            [
+              0.39217808385371683,
+              0.9139271036731299,
+              -2.815429226860307e-13,
+              -0.4058783674596144,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 15.06706422793876,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -3.8617121938743775e-14,
+            0.03518076157175012,
+            0.9999999999999998,
+            1.5863452583018454,
+            2.378473980126445
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 21,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        23
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "23N",
+        "23S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 8.037010278350696,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              1.3895767542485975e-13
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              1.6812755280298492e-13
+            ],
+            [
+              1.3895767542485978e-13,
+              1.7983263559306615e-13,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.0000000000002276,
+          "correlation_eigenvalues": [
+            0.999999999999771,
+            1.000000000000002,
+            1.0000000000002263
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.3947593697575626,
+              1.3895767542485975e-13
+            ],
+            [
+              0.3947593697575626,
+              1.0,
+              1.306169267726396e-13
+            ],
+            [
+              1.3895767542485978e-13,
+              1.3158805633972243e-13,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 1.1846024801186867,
+            "latitude_residual": 1.1846024801186865,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.5180483579804596,
+          "correlation_eigenvalues": [
+            0.6052406302424375,
+            1.0000000000000002,
+            1.3947593697575624
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              1.3895767542485975e-13,
+              -0.9656926912543449,
+              0.3947593697575626
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              1.6812755280298492e-13,
+              -4.0608501095237e-14,
+              0.9126313268765655
+            ],
+            [
+              1.3895767542485978e-13,
+              1.7983263559306615e-13,
+              1.0000000000000002,
+              4.870096149525347e-13,
+              1.3158805633972243e-13
+            ],
+            [
+              -0.965692691254345,
+              -4.0185495875494954e-14,
+              4.870096149525347e-13,
+              1.0,
+              -0.40878363617390895
+            ],
+            [
+              0.3947593697575626,
+              0.9126313268765655,
+              1.306169267726396e-13,
+              -0.40878363617390895,
+              1.0
+            ]
+          ],
+          "VIF": {
+            "s": 14.82851723074158,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -6.505146754119051e-15,
+            0.03577810880862592,
+            1.0000000000000002,
+            1.5833710594941266,
+            2.3808508316972543
+          ]
+        }
+      }
+    },
+    {
+      "held_cycle": 23,
+      "training_cycles": [
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        21
+      ],
+      "training_wings": [
+        "12N",
+        "12S",
+        "13N",
+        "13S",
+        "14N",
+        "14S",
+        "15N",
+        "15S",
+        "17N",
+        "17S",
+        "18N",
+        "18S",
+        "19N",
+        "19S",
+        "21N",
+        "21S"
+      ],
+      "training_wing_count": 16,
+      "representative_rows": 775056,
+      "total_exposure_degree_years": 16320.0,
+      "train_mu_b_years": 7.970385233184823,
+      "fold_signature": "5bc4ef055431a7b947f2b7b961cf17ac1287121fdf67bafb0149bc3a1d135944",
+      "max_abs_residual_identity_error": 0.0,
+      "feature_bases": {
+        "raw": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -8.512631438243784e-14
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -5.15252001285876e-13
+            ],
+            [
+              -8.512631438243784e-14,
+              -5.035899189522451e-13,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.0,
+            "abs_latitude": 1.0,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.000000000000511,
+          "correlation_eigenvalues": [
+            0.9999999999994882,
+            1.0000000000000009,
+            1.0000000000005103
+          ]
+        },
+        "physics_residual": {
+          "columns": [
+            "s",
+            "latitude_residual",
+            "log_area_amplitude"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              0.3972077227352295,
+              -8.512631438243784e-14
+            ],
+            [
+              0.3972077227352295,
+              1.0000000000000002,
+              -2.4397698739564116e-13
+            ],
+            [
+              -8.512631438243784e-14,
+              -2.4397698739564116e-13,
+              0.9999999999999999
+            ]
+          ],
+          "VIF": {
+            "s": 1.187329731351631,
+            "latitude_residual": 1.187329731351631,
+            "log_area_amplitude": 1.0
+          },
+          "standardized_design_rank": 3,
+          "columns_count": 3,
+          "standardized_design_condition_number": 1.522462656407469,
+          "correlation_eigenvalues": [
+            0.6027922772647707,
+            0.9999999999999999,
+            1.3972077227352295
+          ]
+        },
+        "redundant_all_five": {
+          "columns": [
+            "s",
+            "abs_latitude",
+            "log_area_amplitude",
+            "mu_train",
+            "latitude_residual"
+          ],
+          "weighted_correlation": [
+            [
+              1.0,
+              -2.1733327740678844e-15,
+              -8.512631438243784e-14,
+              -0.9651630860310566,
+              0.3972077227352295
+            ],
+            [
+              -2.173332774067884e-15,
+              1.0,
+              -5.15252001285876e-13,
+              5.412783424609411e-14,
+              0.9113895903777274
+            ],
+            [
+              -8.512631438243784e-14,
+              -5.035899189522451e-13,
+              0.9999999999999999,
+              -6.562243083644377e-13,
+              -2.4397698739564116e-13
+            ],
+            [
+              -0.9651630860310566,
+              5.37082386317833e-14,
+              -6.562243083644377e-13,
+              1.0000000000000002,
+              -0.41154466896212755
+            ],
+            [
+              0.3972077227352295,
+              0.9113895903777265,
+              -2.4397698739564116e-13,
+              -0.4115446689621281,
+              1.0000000000000002
+            ]
+          ],
+          "VIF": {
+            "s": 14.607023443965588,
+            "abs_latitude": "infinity",
+            "log_area_amplitude": 1.0,
+            "mu_train": "infinity",
+            "latitude_residual": "infinity"
+          },
+          "standardized_design_rank": 4,
+          "columns_count": 5,
+          "standardized_design_condition_number": "infinity",
+          "correlation_eigenvalues": [
+            -3.386275931695741e-14,
+            0.036351172716396,
+            1.0,
+            1.580545150220623,
+            2.383103677063016
+          ]
+        }
+      }
+    }
+  ],
+  "wing_level_area_description": {
+    "wings": 18,
+    "cycles": 9,
+    "correlation_log_area_log_event_count": 0.9340900511259723,
+    "spearman_area_event_count": 0.9133126934984519,
+    "correlation_log_area_hemisphere_N_indicator": -0.08389900503147549,
+    "correlation_north_south_area_across_nine_cycles": 0.7694936226451962,
+    "north_mean_area": 0.1660213391171994,
+    "south_mean_area": 0.17120470136986304,
+    "paired_north_minus_south_area_mean": -0.005183362252663619,
+    "paired_north_minus_south_area_median": -0.001439112328767117,
+    "north_area_exceeds_south_cycles": 4,
+    "interpretation": "Descriptive only; hemisphere is not a supplementary predictive feature. Event counts are outcomes, never features. No p-values or independent-wing inference."
+  },
+  "wing_level_records": [
+    {
+      "hemicycle": "12N",
+      "cycle": 12,
+      "hemisphere": "N",
+      "A": 0.07897726575342466,
+      "event_count": 522,
+      "logA": -2.5385952432034706,
+      "logN": 6.257667587882639
+    },
+    {
+      "hemicycle": "12S",
+      "cycle": 12,
+      "hemisphere": "S",
+      "A": 0.148840101369863,
+      "event_count": 667,
+      "logA": -1.9048826944379502,
+      "logN": 6.502790045915623
+    },
+    {
+      "hemicycle": "13N",
+      "cycle": 13,
+      "hemisphere": "N",
+      "A": 0.09703273424657533,
+      "event_count": 716,
+      "logA": -2.332706890948213,
+      "logN": 6.573680166960646
+    },
+    {
+      "hemicycle": "13S",
+      "cycle": 13,
+      "hemisphere": "S",
+      "A": 0.14532630136986302,
+      "event_count": 850,
+      "logA": -1.9287737105415574,
+      "logN": 6.745236349484363
+    },
+    {
+      "hemicycle": "14N",
+      "cycle": 14,
+      "hemisphere": "N",
+      "A": 0.11546321095890412,
+      "event_count": 613,
+      "logA": -2.1588033195948344,
+      "logN": 6.418364935936212
+    },
+    {
+      "hemicycle": "14S",
+      "cycle": 14,
+      "hemisphere": "S",
+      "A": 0.08595698082191781,
+      "event_count": 640,
+      "logA": -2.4539083308828484,
+      "logN": 6.461468176353717
+    },
+    {
+      "hemicycle": "15N",
+      "cycle": 15,
+      "hemisphere": "N",
+      "A": 0.1304337479452055,
+      "event_count": 794,
+      "logA": -2.036889859712593,
+      "logN": 6.677083461247136
+    },
+    {
+      "hemicycle": "15S",
+      "cycle": 15,
+      "hemisphere": "S",
+      "A": 0.11632601369863012,
+      "event_count": 697,
+      "logA": -2.15135856692335,
+      "logN": 6.546785410760524
+    },
+    {
+      "hemicycle": "17N",
+      "cycle": 17,
+      "hemisphere": "N",
+      "A": 0.21093428219178084,
+      "event_count": 1001,
+      "logA": -1.556208652826164,
+      "logN": 6.90875477931522
+    },
+    {
+      "hemicycle": "17S",
+      "cycle": 17,
+      "hemisphere": "S",
+      "A": 0.1607079890410959,
+      "event_count": 1020,
+      "logA": -1.8281662934663063,
+      "logN": 6.927557906278317
+    },
+    {
+      "hemicycle": "18N",
+      "cycle": 18,
+      "hemisphere": "N",
+      "A": 0.19308750410958905,
+      "event_count": 1138,
+      "logA": -1.6446118036582096,
+      "logN": 7.037027614686276
+    },
+    {
+      "hemicycle": "18S",
+      "cycle": 18,
+      "hemisphere": "S",
+      "A": 0.23733142191780826,
+      "event_count": 1133,
+      "logA": -1.4382977099878023,
+      "logN": 7.0326242610280065
+    },
+    {
+      "hemicycle": "19N",
+      "cycle": 19,
+      "hemisphere": "N",
+      "A": 0.315169904109589,
+      "event_count": 1590,
+      "logA": -1.1546434074429202,
+      "logN": 7.371489295214277
+    },
+    {
+      "hemicycle": "19S",
+      "cycle": 19,
+      "hemisphere": "S",
+      "A": 0.2576402301369863,
+      "event_count": 1121,
+      "logA": -1.3561911240536275,
+      "logN": 7.02197642307216
+    },
+    {
+      "hemicycle": "21N",
+      "cycle": 21,
+      "hemisphere": "N",
+      "A": 0.18891246301369863,
+      "event_count": 1025,
+      "logA": -1.666471529871275,
+      "logN": 6.932447891572509
+    },
+    {
+      "hemicycle": "21S",
+      "cycle": 21,
+      "hemisphere": "S",
+      "A": 0.19035157534246575,
+      "event_count": 1049,
+      "logA": -1.6588825201570612,
+      "logN": 6.955592608396297
+    },
+    {
+      "hemicycle": "23N",
+      "cycle": 23,
+      "hemisphere": "N",
+      "A": 0.1641809397260274,
+      "event_count": 928,
+      "logA": -1.8067861683238147,
+      "logN": 6.833031732786201
+    },
+    {
+      "hemicycle": "23S",
+      "cycle": 23,
+      "hemisphere": "S",
+      "A": 0.19836169863013697,
+      "event_count": 1107,
+      "logA": -1.617663154027548,
+      "logN": 7.009408932708637
+    }
+  ],
+  "sources": {
+    "poisson_exposure": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_poisson_regression_non_normal_loss.html",
+    "boosting": "https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html",
+    "nested_validation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html",
+    "correlated_importance": "https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance_multicollinear.html",
+    "solar_context": "https://arxiv.org/abs/2405.17185"
+  },
+  "limitations": [
+    "Design rows are numerical quadrature coordinates, not independent solar realizations.",
+    "Raw-coordinate correlations are zero by Cartesian construction, not evidence that observed latitude and time are independent.",
+    "VIF diagnoses linear feature redundancy; deterministic nonlinear dependence can remain.",
+    "No significance p-values, causal effects, or model-ranking conclusions follow from these feature diagnostics.",
+    "Nine development cycles are the cycle-level replication count; three sealed cycles are untouched."
+  ],
+  "versions": {
+    "python": "3.13.11",
+    "numpy": "2.5.2",
+    "pandas": "3.0.0",
+    "scipy": "1.17.0"
+  },
+  "runtime_seconds": 0.2540142920042854,
+  "supplementary_configuration_sha256": "a8f5a3c42062b2fe27704ea34511807ae4cfbce14d37b37ec12a55fb16159008",
+  "supplementary_candidate_configs": {
+    "uniform_area": {
+      "kind": "uniform",
+      "features": "area",
+      "alpha": 0.0
+    },
+    "boost_time_only": {
+      "kind": "boost",
+      "features": "time",
+      "leaves": 15,
+      "iterations": 120
+    },
+    "poisson_tree": {
+      "kind": "tree",
+      "features": "raw",
+      "depth": 6,
+      "leaves": 64,
+      "min_leaf": 1500
+    },
+    "boost_raw_15": {
+      "kind": "boost",
+      "features": "raw",
+      "leaves": 15,
+      "iterations": 120
+    },
+    "boost_raw_31": {
+      "kind": "boost",
+      "features": "raw",
+      "leaves": 31,
+      "iterations": 160
+    },
+    "boost_drift_residual": {
+      "kind": "boost",
+      "features": "residual",
+      "leaves": 15,
+      "iterations": 120
+    }
+  },
+  "supplementary_configuration_note": "Configurations copied from the frozen benchmark manifest for documentation only; this analysis reads no supplementary accuracy results."
+}

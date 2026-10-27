@@ -1,0 +1,3 @@
+# Optional extension; install in addition to the course requirements.
+scikit-learn==1.8.0
+threadpoolctl==3.6.0
