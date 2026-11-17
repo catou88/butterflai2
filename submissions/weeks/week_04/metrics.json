@@ -1,0 +1,826 @@
+{
+ "protocol_fingerprint": {
+  "recipe": {
+   "mesh": [
+    201,
+    241
+   ],
+   "domain": [
+    0.0,
+    60.0
+   ],
+   "window": [
+    -6.0,
+    11.0
+   ],
+   "folds": [
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    21,
+    23
+   ],
+   "withheld": [
+    16,
+    20,
+    22
+   ],
+   "analysis_set": [
+    12,
+    23,
+    30.0
+   ],
+   "gauge": [
+    1.0,
+    1.0,
+    15.0
+   ],
+   "headline_amplitude": "area record"
+  },
+  "digest": "5e55384fbc54"
+ },
+ "execution": {
+  "code_cells": 63,
+  "errors": [],
+  "unexecuted_code_cells": 0,
+  "method": "in-process IPython cell execution (no Jupyter kernel), MPLBACKEND=Agg, variants pre-fitted into the cache by parallel processes running the notebook's own code; BUTTERFLAI_STUDENT=catou88"
+ },
+ "variants_cached": 20,
+ "leaderboard": [
+  {
+   "name": "profile-student_t__shape-two_sided__width-amplitude",
+   "kind": "candidate",
+   "knobs": 3,
+   "fitted_parameters": 27,
+   "held_out_nll": -26.397688856682468,
+   "between_wing_sd": 18.51622947238829,
+   "paired_vs_baseline": -0.9783408018256419,
+   "paired_se": 0.4069688957609502,
+   "paired_median": -0.5952573724186048,
+   "wings_better": 16,
+   "ks_median": 0.041598078484544485,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.425251410997106,
+   "seconds": 294.41365122795105,
+   "fitted_stage_params": {
+    "drift": [
+     14.543484447994592,
+     7.348827484155279
+    ],
+    "profile": [
+     21.066509717187145
+    ],
+    "width": [
+     6.054242968688734,
+     0.48027508095036603
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "the same, with ties reverted to the baseline value",
+   "same_fingerprint": true
+  },
+  {
+   "name": "emission-direct__profile-student_t__shape-two_sided__width-amplitude",
+   "kind": "candidate",
+   "knobs": 4,
+   "fitted_parameters": 27,
+   "held_out_nll": -26.39461301823016,
+   "between_wing_sd": 18.511575146776345,
+   "paired_vs_baseline": -0.9752649633733333,
+   "paired_se": 0.4059590326752052,
+   "paired_median": -0.5892065148797816,
+   "wings_better": 16,
+   "ks_median": 0.04160862672001857,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.421912478505167,
+   "seconds": 164.90208411216736,
+   "fitted_stage_params": {
+    "drift": [
+     14.54649552384183,
+     7.347467020193828
+    ],
+    "profile": [
+     22.340769466344863
+    ],
+    "width": [
+     6.0610349941811705,
+     0.4807397403703415
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "every knob that won its ablation, together",
+   "same_fingerprint": true
+  },
+  {
+   "name": "shape-two_sided__width-amplitude",
+   "kind": "candidate",
+   "knobs": 2,
+   "fitted_parameters": 26,
+   "held_out_nll": -26.293787055574636,
+   "between_wing_sd": 18.397215336714982,
+   "paired_vs_baseline": -0.8744390007178128,
+   "paired_se": 0.3988706578448774,
+   "paired_median": -0.327776091241077,
+   "wings_better": 16,
+   "ks_median": 0.04157801878426569,
+   "ks_not_rejected_5pct": 9,
+   "in_sample_nll": -27.325939632911684,
+   "seconds": 117.75262665748596,
+   "fitted_stage_params": {
+    "drift": [
+     14.623158966005443,
+     7.30314915678705
+    ],
+    "profile": [],
+    "width": [
+     6.259159758588172,
+     0.4947781349430425
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Candidate: amplitude width plus a free rise/decay, without my heavy-tailed belt - how much of the combined gain is my knob's?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "profile-student_t__shape-two_sided__width-piecewise",
+   "kind": "candidate",
+   "knobs": 3,
+   "fitted_parameters": 28,
+   "held_out_nll": -26.219721050930744,
+   "between_wing_sd": 18.60302477608661,
+   "paired_vs_baseline": -0.8003729960739185,
+   "paired_se": 0.27257447805078605,
+   "paired_median": -0.5984626194498297,
+   "wings_better": 14,
+   "ks_median": 0.0435399891893819,
+   "ks_not_rejected_5pct": 7,
+   "in_sample_nll": -27.34312621912774,
+   "seconds": 437.86531162261963,
+   "fitted_stage_params": {
+    "drift": [
+     14.69646785771723,
+     7.804446605027387
+    ],
+    "profile": [
+     17.516066230902783
+    ],
+    "width": [
+     1.0825086290838355,
+     0.40206549960221083,
+     -0.20178201653363104
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Candidate: the latitude-shaped (piecewise) width instead of the amplitude width, with the other winners - which story of the belt's thickness predicts better in combination?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "profile-student_t__width-amplitude",
+   "kind": "candidate",
+   "knobs": 2,
+   "fitted_parameters": 26,
+   "held_out_nll": -26.209505713418277,
+   "between_wing_sd": 18.359094197489608,
+   "paired_vs_baseline": -0.7901576585614504,
+   "paired_se": 0.2967331732143602,
+   "paired_median": -0.46687652508436583,
+   "wings_better": 18,
+   "ks_median": 0.045542596085069234,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.310292570409633,
+   "seconds": 224.97370672225952,
+   "fitted_stage_params": {
+    "drift": [
+     14.538874900461435,
+     7.371857820055776
+    ],
+    "profile": [
+     16.885496357751084
+    ],
+    "width": [
+     5.917059274413737,
+     0.4720914567661431
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Candidate: only the two knobs that won by more than two standard errors (amplitude width, heavy-tailed belt) - is the two-sided profile worth its parameter?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "width-amplitude",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 25,
+   "held_out_nll": -26.107611503008783,
+   "between_wing_sd": 18.232274798156894,
+   "paired_vs_baseline": -0.6882634481519574,
+   "paired_se": 0.29321482327015197,
+   "paired_median": -0.2861463646631295,
+   "wings_better": 15,
+   "ks_median": 0.045284867008248755,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.195116511398783,
+   "seconds": 177.81683540344238,
+   "fitted_stage_params": {
+    "drift": [
+     14.63524023796948,
+     7.3127368294585
+    ],
+    "profile": [],
+    "width": [
+     6.187610182101473,
+     0.49174497843805
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Is the emerging belt wider in stronger cycles?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "width-combo",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 26,
+   "held_out_nll": -26.06892993212864,
+   "between_wing_sd": 18.209732384576384,
+   "paired_vs_baseline": -0.6495818772718122,
+   "paired_se": 0.29025152643965135,
+   "paired_median": -0.2558025218211526,
+   "wings_better": 14,
+   "ks_median": 0.04514556778314306,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.195789523152865,
+   "seconds": 243.28810739517212,
+   "fitted_stage_params": {
+    "drift": [
+     14.62235450594983,
+     7.286083405342805
+    ],
+    "profile": [],
+    "width": [
+     6.311794330823363,
+     0.4874519951132918,
+     -0.006678624407085317
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Do amplitude and latitude dependence of the width both matter at once, or do they explain the same thing?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "profile-student_t__width-piecewise",
+   "kind": "candidate",
+   "knobs": 2,
+   "fitted_parameters": 27,
+   "held_out_nll": -26.064822221757748,
+   "between_wing_sd": 18.441638795329492,
+   "paired_vs_baseline": -0.6454741669009193,
+   "paired_se": 0.19340572962742125,
+   "paired_median": -0.5249032978622843,
+   "wings_better": 15,
+   "ks_median": 0.04702911484729999,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.247894241698685,
+   "seconds": 311.2644155025482,
+   "fitted_stage_params": {
+    "drift": [
+     14.709504999038993,
+     7.8650359425879826
+    ],
+    "profile": [
+     14.675769061921102
+    ],
+    "width": [
+     1.0810258157426418,
+     0.38482399026816294,
+     -0.16107344828656245
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Candidate: piecewise width plus my heavy-tailed belt only - do the two latitude-shape knobs do separate work?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "width-piecewise",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 26,
+   "held_out_nll": -25.913823737945606,
+   "between_wing_sd": 18.28608918182584,
+   "paired_vs_baseline": -0.49447568308877554,
+   "paired_se": 0.16320413429103292,
+   "paired_median": -0.39400587472018245,
+   "wings_better": 15,
+   "ks_median": 0.04709897265043794,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -27.095492480295498,
+   "seconds": 257.18969535827637,
+   "fitted_stage_params": {
+    "drift": [
+     14.84745112237604,
+     7.850227573200675
+    ],
+    "profile": [],
+    "width": [
+     0.9990196119748871,
+     0.4100739629051786,
+     -0.1336075011077495
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Does a separate poleward arm of the width-latitude relation, as in ButterflAI 1.0, earn its extra parameter?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "profile-student_t",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 25,
+   "held_out_nll": -25.67487960814365,
+   "between_wing_sd": 18.227162705130677,
+   "paired_vs_baseline": -0.25553155328682836,
+   "paired_se": 0.08180882164096621,
+   "paired_median": -0.15627699751188806,
+   "wings_better": 15,
+   "ks_median": 0.046109998256863946,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -26.835560004478086,
+   "seconds": 236.65760326385498,
+   "fitted_stage_params": {
+    "drift": [
+     14.45921013627247,
+     7.329393968713257
+    ],
+    "profile": [
+     12.347014301934134
+    ],
+    "width": [
+     6.054944662143489
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "My knob: are there more groups far from the belt centre in latitude than a Gaussian belt allows (heavy tails)?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "shape-two_sided",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 25,
+   "held_out_nll": -25.60380731846669,
+   "between_wing_sd": 18.196992137010053,
+   "paired_vs_baseline": -0.18445926360986287,
+   "paired_se": 0.12529977903512435,
+   "paired_median": -0.11763115378096756,
+   "wings_better": 13,
+   "ks_median": 0.042299782621602985,
+   "ks_not_rejected_5pct": 7,
+   "in_sample_nll": -26.724963660600004,
+   "seconds": 165.9685275554657,
+   "fitted_stage_params": {
+    "drift": [
+     14.569249640213595,
+     7.21107606128227
+    ],
+    "profile": [],
+    "width": [
+     6.530048915703173
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Does letting the rise width and the decay width differ freely (one extra parameter) beat the gamma?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "width-latitude",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 25,
+   "held_out_nll": -25.556199455445046,
+   "between_wing_sd": 18.008494083650792,
+   "paired_vs_baseline": -0.13685140058822085,
+   "paired_se": 0.06130868874820862,
+   "paired_median": -0.08256652232361716,
+   "wings_better": 14,
+   "ks_median": 0.04518450651257372,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -26.709692135438626,
+   "seconds": 181.66164803504944,
+   "fitted_stage_params": {
+    "drift": [
+     14.707332844353516,
+     7.522121223822794
+    ],
+    "profile": [],
+    "width": [
+     4.809652210683365,
+     0.10470689125024807
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Is the emerging belt wider when it sits further from the equator?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "emission-direct",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 24,
+   "held_out_nll": -25.422147066233457,
+   "between_wing_sd": 18.05299633752995,
+   "paired_vs_baseline": -0.002799011376630094,
+   "paired_se": 0.013245490253368202,
+   "paired_median": -0.001151067824487484,
+   "wings_better": 10,
+   "ks_median": 0.045880748550065145,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -26.600726529521626,
+   "seconds": 60.31325340270996,
+   "fitted_stage_params": {
+    "drift": [
+     14.58308065832537,
+     7.225960222781993
+    ],
+    "profile": [],
+    "width": [
+     6.45505187479009
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Does removing the buoyancy threshold change held-out prediction on this catalog at all?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "baseline",
+   "kind": "reference",
+   "knobs": 0,
+   "fitted_parameters": 24,
+   "held_out_nll": -25.41934805485683,
+   "between_wing_sd": 18.03319991094117,
+   "paired_vs_baseline": 0.0,
+   "paired_se": 0.0,
+   "paired_median": 0.0,
+   "wings_better": 0,
+   "ks_median": 0.04593076980184059,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -26.599737645443636,
+   "seconds": 43.850714445114136,
+   "fitted_stage_params": {
+    "drift": [
+     14.583531126272922,
+     7.223197666302599
+    ],
+    "profile": [],
+    "width": [
+     6.453080777705489
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "the Week 3 model, regenerated as the reference row",
+   "same_fingerprint": true
+  },
+  {
+   "name": "pooling-hemi",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 26,
+   "held_out_nll": -25.120639275599693,
+   "between_wing_sd": 17.640939323351656,
+   "paired_vs_baseline": 0.2987087792571344,
+   "paired_se": 0.2759403089494818,
+   "paired_median": 0.0016839088655675738,
+   "wings_better": 9,
+   "ks_median": 0.0481443682051973,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -26.601168347076136,
+   "seconds": 175.78218293190002,
+   "fitted_stage_params": {
+    "drift": [
+     14.583574443486356,
+     7.2233668939277935
+    ],
+    "profile": [],
+    "width": [
+     6.453045849960122
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Do northern and southern wings differ in the shape of their time profile, and not only in their size?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "shape-weibull",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 24,
+   "held_out_nll": -25.082536765900034,
+   "between_wing_sd": 18.145993436838417,
+   "paired_vs_baseline": 0.3368112889567947,
+   "paired_se": 0.37578701921888846,
+   "paired_median": 0.3094210405699771,
+   "wings_better": 7,
+   "ks_median": 0.05645342713014645,
+   "ks_not_rejected_5pct": 7,
+   "in_sample_nll": -26.14279453742728,
+   "seconds": 132.43795228004456,
+   "fitted_stage_params": {
+    "drift": [
+     14.577493555985125,
+     7.228866361141718
+    ],
+    "profile": [],
+    "width": [
+     6.436278411560562
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Does a Weibull rise-and-decay describe an unseen wing better than the gamma, at the same parameter count?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "shape-symmetric",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 24,
+   "held_out_nll": -24.653130463891635,
+   "between_wing_sd": 17.914088362197916,
+   "paired_vs_baseline": 0.7662175909651924,
+   "paired_se": 0.34015457604233995,
+   "paired_median": 0.553542567819919,
+   "wings_better": 5,
+   "ks_median": 0.06063084747366143,
+   "ks_not_rejected_5pct": 7,
+   "in_sample_nll": -25.723352019552213,
+   "seconds": 121.1993613243103,
+   "fitted_stage_params": {
+    "drift": [
+     14.563745473419543,
+     7.218549305827461
+    ],
+    "profile": [],
+    "width": [
+     6.52980773171914
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Control: does forcing the rise to mirror the decay make held-out prediction worse, as it should?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "shape-lognormal",
+   "kind": "ablation",
+   "knobs": 1,
+   "fitted_parameters": 24,
+   "held_out_nll": -24.270160317771584,
+   "between_wing_sd": 17.513978361967695,
+   "paired_vs_baseline": 1.1491877370852448,
+   "paired_se": 0.335591828082677,
+   "paired_median": 0.9034849560324894,
+   "wings_better": 2,
+   "ks_median": 0.04975787043340152,
+   "ks_not_rejected_5pct": 8,
+   "in_sample_nll": -25.575904893973867,
+   "seconds": 119.49377918243408,
+   "fitted_stage_params": {
+    "drift": [
+     14.572295490494318,
+     7.175195482158639
+    ],
+    "profile": [],
+    "width": [
+     6.439512448155409
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Does a log-normal profile, with its slower and heavier decay tail, predict an unseen wing better than the gamma?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "pooling-wing_all",
+   "kind": "bound",
+   "knobs": 1,
+   "fitted_parameters": 58,
+   "held_out_nll": -29.10419445688302,
+   "between_wing_sd": 19.361255543906925,
+   "paired_vs_baseline": -3.6848464020261926,
+   "paired_se": 1.1698563843062129,
+   "paired_median": -1.6029154933939351,
+   "wings_better": 18,
+   "ks_median": 0.034586690010272536,
+   "ks_not_rejected_5pct": 12,
+   "in_sample_nll": -29.460440005961217,
+   "seconds": 184.43064713478088,
+   "fitted_stage_params": {
+    "drift": [
+     14.58496339739389,
+     7.231616750204197
+    ],
+    "profile": [],
+    "width": [
+     6.452980965673036
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Bound, not a prediction: how well could the gamma describe a wing if every shape parameter were fitted on that wing?",
+   "same_fingerprint": true
+  },
+  {
+   "name": "pooling-wing_rise",
+   "kind": "bound",
+   "knobs": 1,
+   "fitted_parameters": 41,
+   "held_out_nll": -28.472946438962772,
+   "between_wing_sd": 19.28907304009438,
+   "paired_vs_baseline": -3.053598384105948,
+   "paired_se": 1.107940099506831,
+   "paired_median": -1.1169052810680986,
+   "wings_better": 17,
+   "ks_median": 0.04097243479030925,
+   "ks_not_rejected_5pct": 9,
+   "in_sample_nll": -29.00908541327799,
+   "seconds": 154.29234409332275,
+   "fitted_stage_params": {
+    "drift": [
+     14.5681404488558,
+     7.186301374273393
+    ],
+    "profile": [],
+    "width": [
+     6.4729024658094225
+    ],
+    "gate": [],
+    "emission": []
+   },
+   "question": "Bound, not a prediction: how well could the gamma describe a wing if each wing's rise were fitted on that wing?",
+   "same_fingerprint": true
+  }
+ ],
+ "submission": {
+  "student": "catou88",
+  "variant": "profile-student_t__shape-two_sided__width-amplitude",
+  "kind": "candidate",
+  "question": "Which classical model best predicts a wing it has never seen? Mine: a belt whose width grows with cycle amplitude, a time profile whose rise and decay widths differ, and a heavy-tailed (Student-t) belt across latitude - my own knob. The buoyancy threshold is kept: removing it was a tie.",
+  "spec": {
+   "shape": "two_sided",
+   "pooling": "shared",
+   "drift": "exponential",
+   "profile": "student_t",
+   "width": "amplitude",
+   "gate": "none",
+   "emission": "threshold"
+  },
+  "selection_note": "chosen among 20 cached variants on the same nine development folds: the margin is optimistic (model selection), and only the sealed cycles 16, 20, 22 can test it",
+  "my_knob": {
+   "stage": "profile",
+   "values": [
+    "student_t"
+   ],
+   "default": "gaussian",
+   "question": "Are there more sunspot groups far from the belt centre (in latitude, at a given time) than a Gaussian belt allows? i.e. does the emerging band have heavy tails / excess kurtosis?",
+   "expected": "Negative paired held-out NLL (a gain), but small: a few hundredths of a nat per hemicycle-year, coming from the minority of groups that emerge several degrees from the track. Little or no change in KS, because KS only sees times and the knob only reshapes latitude. Risk: nu trades off against the belt width w, so w will shrink as nu falls."
+  },
+  "fitted_parameters": 27,
+  "held_out_nll_per_hemicycle_year": -26.397688856682468,
+  "between_hemicycle_spread": 18.51622947238829,
+  "per_hemicycle": {
+   "12N": -3.897236722735723,
+   "12S": -4.071239816038201,
+   "13N": -10.170487479999672,
+   "13S": -18.92763750275229,
+   "14N": -2.7950066430973415,
+   "14S": -1.413456829517185,
+   "15N": -15.180174451397662,
+   "15S": -16.65898194214607,
+   "17N": -34.406613854771905,
+   "17S": -36.673090642658785,
+   "18N": -53.30238801652126,
+   "18S": -46.30074879624456,
+   "19N": -63.352715375713295,
+   "19S": -44.19300201578787,
+   "21N": -34.268110273652894,
+   "21S": -34.235100988732896,
+   "23N": -26.238445282163774,
+   "23S": -29.073962786353057
+  },
+  "paired_vs_baseline": {
+   "mean": -0.9783408018256419,
+   "se": 0.4069688957609502,
+   "median": -0.5952573724186048,
+   "better": 16,
+   "of": 18
+  },
+  "ks_median": 0.041598078484544485,
+  "ks_not_rejected": 8,
+  "in_sample_nll_per_hemicycle_year": -27.425251410997106,
+  "plausibility": {
+   "cycle": 19,
+   "table": [
+    {
+     "hemicycle": "19N",
+     "predicted": 1441.2995190279767,
+     "observed": 1590.0,
+     "simulated": 1441.0,
+     "centroid_model": 15.1815414972661,
+     "centroid_obs": 17.16069182389937,
+     "spread_model": 7.706438171441047,
+     "spread_obs": 8.507418494423913
+    },
+    {
+     "hemicycle": "19S",
+     "predicted": 1253.1228342849176,
+     "observed": 1121.0,
+     "simulated": 1251.0,
+     "centroid_model": 15.050594738622864,
+     "centroid_obs": 16.36842105263158,
+     "spread_model": 7.475741560184354,
+     "spread_obs": 7.604571117406902
+    }
+   ]
+  },
+  "count_error_percent": 10.569194892325957,
+  "protocol": {
+   "held_out_unit_contributed": [
+    "its own clock (time shift from its own events)",
+    "its own area-record amplitude (independent observable; map fitted on training wings)"
+   ],
+   "declaration": [
+    "its own clock: the time shift fitted from its own events, with the fold's drift timescale frozen",
+    "its own area record: the peak of its smoothed sunspot-area series (an independent observable, but built from the same groups' areas), mapped to an amplitude with coefficients fitted on the training wings only. The 365-day centred smoothing also lets a neighbouring cycle's area enter it.",
+    "every shape, width, profile and emission parameter fitted on the training cycles only - although each fold's optimizer is warm-started from the in-sample fit over all 18 wings and runs 2 sweeps, as the runner's reference workflow prescribes: a soft channel, not a fitted held-out parameter"
+   ]
+  },
+  "fingerprint": {
+   "recipe": {
+    "mesh": [
+     201,
+     241
+    ],
+    "domain": [
+     0.0,
+     60.0
+    ],
+    "window": [
+     -6.0,
+     11.0
+    ],
+    "folds": [
+     12,
+     13,
+     14,
+     15,
+     17,
+     18,
+     19,
+     21,
+     23
+    ],
+    "withheld": [
+     16,
+     20,
+     22
+    ],
+    "analysis_set": [
+     12,
+     23,
+     30.0
+    ],
+    "gauge": [
+     1.0,
+     1.0,
+     15.0
+    ],
+    "headline_amplitude": "area record"
+   },
+   "digest": "5e55384fbc54"
+  }
+ },
+ "printed": {
+  "model_choice": "   reverted emission: direct gained +0.0028 +/- 0.0132: smaller than its own standard error, so a tie\nprice of the extra candidates (seconds, before the cache is consulted):\n                                                        how  fitted  cached  estimate_s\nname                                                                                   \nprofile-student_t__width-amplitude                    timed      26    True         161\nshape-two_sided__width-amplitude                      timed      26    True          93\nprofile-student_t__shape-two_sided__width-piecewise   timed      28    True         478\nprofile-student_t__width-piecewise                   scaled      27    True         238\n\nchoosing my model:\n   start: profile-student_t__shape-two_sided__width-amplitude (tie-reverted greedy)\n   profile-student_t__width-amplitude: +0.1882 +/- 0.1254 vs profile-student_t__shape-two_sided__width-amplitude (26 vs 27 params) - kept the current model\n   shape-two_sided__width-amplitude: +0.1039 +/- 0.0418 vs profile-student_t__shape-two_sided__width-amplitude (26 vs 27 params) - kept the current model\n   profile-student_t__shape-two_sided__width-piecewise: +0.1780 +/- 0.2439 vs profile-student_t__shape-two_sided__width-amplitude (28 vs 27 params) - kept the current model\n   profile-student_t__width-piecewise: +0.3329 +/- 0.3174 vs profile-student_t__shape-two_sided__width-amplitude (27 vs 27 params) - kept the current model\n\nMY_MODEL = profile-student_t__shape-two_sided__width-amplitude\n\nmy knob, profile = student_t:\n   expected : Negative paired held-out NLL (a gain), but small: a few hundredths of a nat per hemicycle-year, coming from the minority of groups that emerge several degrees from the track. Little or no change in KS, because KS only sees times and the knob only reshapes latitude. Risk: nu trades off against the belt width w, so w will shrink as nu falls.\n   outcome  : paired -0.2555 +/- 0.0818 (3.1 SE), median -0.1563, better in 15/18; KS 0.0461 vs baseline 0.0459; fitted nu = 12.3, w = 6.05 deg (baseline w = 6.45)\nChoosing among these on the same nine folds is model selection: the chosen row's margin is optimistic, and only the sealed cycles can test it.\n",
+  "knobs_vs_combination": "paired held-out gain, in nats per hemicycle-year (positive = better than the baseline):\n   shape = two_sided            on its own    +0.1845\n   profile = student_t          on its own    +0.2555\n   width = amplitude            on its own    +0.6883\n   sum of the parts                           +1.1283\n   all of them together                       +0.9783 +/- 0.4070   median +0.5953   better in 16 of 18\n\nthe combination is 0.1499 nats short of the sum of its parts\n",
+  "gaming_table": "                                              held_nll     bought         se better  params_from_held_out\nviolation                                                                                                \nhonest (area-record amplitude, own clock)     -25.4193     0.0000     0.0000   0/18                     0\n1 · amplitude fitted on the held-out events   -25.6987     0.2794     0.0887  18/18                     1\n2 · clock from the all-data alignment         -25.4593     0.0400     0.0380   9/18                     0\n3 · per-wing rise fitted on the scored wing   -28.4729     3.0536     1.1079  17/18                     1\n\nthe best honest gain in the cache is +0.9783 nats per hemicycle-year (profile-student_t__shape-two_sided__width-amplitude)\nthe cheapest violation buys +0.0400 and the dearest +3.0536\nhalf a nat over a 17-year window is 0.0294 per hemicycle-year, so fitting one parameter\nexplains only a fraction of what these buy. The rest is the held-out wing informing its own\nprediction — which is a leak, not optimism, and it cannot be corrected for after the fact.\n\nNot one of these rows changed a prediction the training model makes. Only what the held-out\nhemicycle was allowed to contribute changed, which is why the protocol is part of the score.\n",
+  "plausibility": "my model on cycle 19, held out:\n            predicted    observed   simulated  centroid_model  centroid_obs  spread_model  spread_obs\nhemicycle                                                                                            \n19N           1441.30     1590.00     1441.00           15.18         17.16          7.71        8.51\n19S           1253.12     1121.00     1251.00           15.05         16.37          7.48        7.60\n   count error 10.6% on average · centroid model 15.12 vs observed 16.76 deg · spread model 7.59 vs observed 8.06 deg\n\nbaseline on cycle 19, held out:\n            predicted    observed   simulated  centroid_model  centroid_obs  spread_model  spread_obs\nhemicycle                                                                                            \n19N           1431.19     1590.00     1427.00           14.80         17.16          6.99        8.51\n19S           1245.64     1121.00     1225.00           14.80         16.37          6.99        7.60\n   count error 10.6% on average · centroid model 14.80 vs observed 16.76 deg · spread model 6.99 vs observed 8.06 deg\n\n"
+ }
+}

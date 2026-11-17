@@ -1,0 +1,139 @@
+{
+ "student": "catou88",
+ "variant": "profile-student_t__shape-two_sided__width-amplitude",
+ "kind": "candidate",
+ "question": "Which classical model best predicts a wing it has never seen? Mine: a belt whose width grows with cycle amplitude, a time profile whose rise and decay widths differ, and a heavy-tailed (Student-t) belt across latitude - my own knob. The buoyancy threshold is kept: removing it was a tie.",
+ "spec": {
+  "shape": "two_sided",
+  "pooling": "shared",
+  "drift": "exponential",
+  "profile": "student_t",
+  "width": "amplitude",
+  "gate": "none",
+  "emission": "threshold"
+ },
+ "selection_note": "chosen among 20 cached variants on the same nine development folds: the margin is optimistic (model selection), and only the sealed cycles 16, 20, 22 can test it",
+ "my_knob": {
+  "stage": "profile",
+  "values": [
+   "student_t"
+  ],
+  "default": "gaussian",
+  "question": "Are there more sunspot groups far from the belt centre (in latitude, at a given time) than a Gaussian belt allows? i.e. does the emerging band have heavy tails / excess kurtosis?",
+  "expected": "Negative paired held-out NLL (a gain), but small: a few hundredths of a nat per hemicycle-year, coming from the minority of groups that emerge several degrees from the track. Little or no change in KS, because KS only sees times and the knob only reshapes latitude. Risk: nu trades off against the belt width w, so w will shrink as nu falls."
+ },
+ "fitted_parameters": 27,
+ "held_out_nll_per_hemicycle_year": -26.397688856682468,
+ "between_hemicycle_spread": 18.51622947238829,
+ "per_hemicycle": {
+  "12N": -3.897236722735723,
+  "12S": -4.071239816038201,
+  "13N": -10.170487479999672,
+  "13S": -18.92763750275229,
+  "14N": -2.7950066430973415,
+  "14S": -1.413456829517185,
+  "15N": -15.180174451397662,
+  "15S": -16.65898194214607,
+  "17N": -34.406613854771905,
+  "17S": -36.673090642658785,
+  "18N": -53.30238801652126,
+  "18S": -46.30074879624456,
+  "19N": -63.352715375713295,
+  "19S": -44.19300201578787,
+  "21N": -34.268110273652894,
+  "21S": -34.235100988732896,
+  "23N": -26.238445282163774,
+  "23S": -29.073962786353057
+ },
+ "paired_vs_baseline": {
+  "mean": -0.9783408018256419,
+  "se": 0.4069688957609502,
+  "median": -0.5952573724186048,
+  "better": 16,
+  "of": 18
+ },
+ "ks_median": 0.041598078484544485,
+ "ks_not_rejected": 8,
+ "in_sample_nll_per_hemicycle_year": -27.425251410997106,
+ "plausibility": {
+  "cycle": 19,
+  "table": [
+   {
+    "hemicycle": "19N",
+    "predicted": 1441.2995190279767,
+    "observed": 1590.0,
+    "simulated": 1441.0,
+    "centroid_model": 15.1815414972661,
+    "centroid_obs": 17.16069182389937,
+    "spread_model": 7.706438171441047,
+    "spread_obs": 8.507418494423913
+   },
+   {
+    "hemicycle": "19S",
+    "predicted": 1253.1228342849176,
+    "observed": 1121.0,
+    "simulated": 1251.0,
+    "centroid_model": 15.050594738622864,
+    "centroid_obs": 16.36842105263158,
+    "spread_model": 7.475741560184354,
+    "spread_obs": 7.604571117406902
+   }
+  ]
+ },
+ "count_error_percent": 10.569194892325957,
+ "protocol": {
+  "held_out_unit_contributed": [
+   "its own clock (time shift from its own events)",
+   "its own area-record amplitude (independent observable; map fitted on training wings)"
+  ],
+  "declaration": [
+   "its own clock: the time shift fitted from its own events, with the fold's drift timescale frozen",
+   "its own area record: the peak of its smoothed sunspot-area series (an independent observable, but built from the same groups' areas), mapped to an amplitude with coefficients fitted on the training wings only. The 365-day centred smoothing also lets a neighbouring cycle's area enter it.",
+   "every shape, width, profile and emission parameter fitted on the training cycles only - although each fold's optimizer is warm-started from the in-sample fit over all 18 wings and runs 2 sweeps, as the runner's reference workflow prescribes: a soft channel, not a fitted held-out parameter"
+  ]
+ },
+ "fingerprint": {
+  "recipe": {
+   "mesh": [
+    201,
+    241
+   ],
+   "domain": [
+    0.0,
+    60.0
+   ],
+   "window": [
+    -6.0,
+    11.0
+   ],
+   "folds": [
+    12,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    21,
+    23
+   ],
+   "withheld": [
+    16,
+    20,
+    22
+   ],
+   "analysis_set": [
+    12,
+    23,
+    30.0
+   ],
+   "gauge": [
+    1.0,
+    1.0,
+    15.0
+   ],
+   "headline_amplitude": "area record"
+  },
+  "digest": "5e55384fbc54"
+ }
+}
