@@ -1,4 +1,4 @@
-# Catherine Zheng — Homework 1–3
+# Catherine Zheng — Homework 1–5
 
 These submissions complete the **released** course tasks, rather than inventing exercises from the syllabus:
 
@@ -7,6 +7,8 @@ These submissions complete the **released** course tasks, rather than inventing 
 - [Homework 3: Tasks 20–31](weeks/week_03/03_latent_belt.ipynb), [results](weeks/week_03/REPORT.md), [independent review](weeks/week_03/REVIEW.md), [resume evidence](weeks/week_03/RESUME.md), and [conversation handoff](weeks/week_03/vocal_handoff.md).
 - [Extended nine-model comparison](weeks/week_03/MODEL_COMPARISON_REPORT.md), [feature analysis](weeks/week_03/FEATURE_REVIEW.md), and [supplemental model review](weeks/week_03/COMPARISON_REVIEW.md).
 - [Independent review](HOMEWORK_1_2_REVIEW.md) and [combined report / resume evidence](HOMEWORK_1_2_REPORT.md).
+- [Homework 4: Tasks 32–43](weeks/week_04/04_scoreboard1.ipynb), [results](weeks/week_04/REPORT.md), [submission](weeks/week_04/scoreboard1_report_catou88.json), and [conversation handoff](weeks/week_04/vocal_handoff.md).
+- [Homework 5: Tasks 44–55](weeks/week_05/05_neural_fields.ipynb), [results](weeks/week_05/REPORT.md), and [conversation handoff](weeks/week_05/vocal_handoff.md). Run on the CPU `taste` profile; see the report.
 
 ## Submission instructions followed
 
@@ -16,7 +18,7 @@ This checkout originally stopped at `a469fc9`. It was fast-forwarded to course r
 
 ## Reproduce
 
-Open a notebook from this clone and run every cell in order. The first code cell is the unmodified course setup. Local Phase A analysis uses NumPy, pandas, SciPy, and Matplotlib; a GPU is not required. Each notebook is self-contained and reads the original catalog and frozen legacy model. Derived tables are regenerated under the ignored `data/derived/` directory. Each notebook documents its seeds and diagnostic settings. The recorded runs used Python 3.13.11; the course environment file specifies Python 3.12. Exact optimizer results can differ across package versions, so the measured package versions are retained alongside the results.
+Open a notebook from this clone and run every cell in order. The first code cell is the unmodified course setup. Local Phase A analysis uses NumPy, pandas, SciPy, and Matplotlib; a GPU is not required. Homework 5 (Phase B) also needs PyTorch and Lightning (tested: torch 2.15 CPU, lightning 2.6.6); without a GPU the notebook selects its `taste` profile automatically, and `BUTTERFLAI_PROFILE=full` forces the full one (about 8 min on a GPU, hours on a CPU). Each notebook is self-contained and reads the original catalog and frozen legacy model. Derived tables are regenerated under the ignored `data/derived/` directory. Each notebook documents its seeds and diagnostic settings. Homeworks 1–3 were recorded with Python 3.13.11 and Homeworks 4–5 with Python 3.12.16; the course environment file specifies Python 3.12. Exact optimizer results can differ across package versions, so the measured package versions are retained alongside the results.
 
 To execute with Jupyter tooling, from the repository root:
 
@@ -24,6 +26,8 @@ To execute with Jupyter tooling, from the repository root:
 python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 submissions/weeks/week_01/01_counting_process.ipynb
 python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 submissions/weeks/week_02/02_rate_1d.ipynb
 python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 submissions/weeks/week_03/03_latent_belt.ipynb
+python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 submissions/weeks/week_04/04_scoreboard1.ipynb
+python -m jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=3600 submissions/weeks/week_05/05_neural_fields.ipynb
 ```
 
 Run each command separately or in separate terminals. No notebook imports another week's code. Their derived inputs are reproducible from the raw catalog, not a hidden dependency. Homework 3 caches repeated fold computations under ignored `data/derived/` with input, code, and configuration provenance; incompatible caches must be rejected and regenerated. A cache hit is a replay of an earlier experiment, not a new optimization run or a measured speedup by itself.
