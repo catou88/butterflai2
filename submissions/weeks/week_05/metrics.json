@@ -1,0 +1,438 @@
+{
+ "profile": "taste",
+ "protocol_fingerprint": {
+  "recipe": {
+   "mesh": [
+    201,
+    241
+   ],
+   "domain": [
+    0.0,
+    60.0
+   ],
+   "window": [
+    -6.0,
+    11.0
+   ],
+   "profile": "taste",
+   "wings": [
+    "13N",
+    "14N",
+    "18N",
+    "19N"
+   ],
+   "folds": [
+    18,
+    19
+   ],
+   "withheld": [
+    16,
+    20,
+    22
+   ],
+   "analysis_set": [
+    12,
+    23,
+    30.0
+   ],
+   "gauge": [
+    1.0,
+    1.0,
+    15.0
+   ],
+   "headline_amplitude": "area record"
+  },
+  "digest": "e65670626346"
+ },
+ "execution": {
+  "code_cells": 63,
+  "errors": [],
+  "unexecuted_code_cells": 0,
+  "live_raise_not_implemented": 0,
+  "method": "in-process IPython cell execution (no Jupyter kernel), MPLBACKEND=Agg, CPU only (torch CPU build), from an empty data/derived/week05 cache"
+ },
+ "results": [
+  {
+   "name": "concat__seed42__folds18__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 42,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N"
+   ],
+   "held_out_nll": -48.929965023504415,
+   "per_wing_nll": {
+    "18N": -48.929965023504415
+   },
+   "paired_vs_champion": 5.838197209353304,
+   "paired_se": null,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.04393809557129558,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -27.963579847581002,
+   "seconds": 9.37963604927063,
+   "same_fingerprint": true
+  },
+  {
+   "name": "concat__seed44__folds18__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 44,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N"
+   ],
+   "held_out_nll": -45.040123747885055,
+   "per_wing_nll": {
+    "18N": -45.040123747885055
+   },
+   "paired_vs_champion": 9.728038484972664,
+   "paired_se": null,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.1525214656656877,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -29.354499820051316,
+   "seconds": 9.143699169158936,
+   "same_fingerprint": true
+  },
+  {
+   "name": "concat__seed43__folds18__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 43,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N"
+   ],
+   "held_out_nll": -36.929559974496705,
+   "per_wing_nll": {
+    "18N": -36.929559974496705
+   },
+   "paired_vs_champion": 17.838602258361014,
+   "paired_se": null,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.19840115165435124,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -28.291158158185056,
+   "seconds": 9.39599609375,
+   "same_fingerprint": true
+  },
+  {
+   "name": "gate-tanh_x__profile-asymmetric__shift-from_amplitude_1p__width-instantaneous",
+   "kind": "candidate",
+   "fitted_parameters": 15,
+   "seed": null,
+   "epochs": null,
+   "lr": null,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -65.99925401748922,
+   "per_wing_nll": {
+    "18N": -54.76816223285772,
+    "19N": -77.23034580212072
+   },
+   "paired_vs_champion": 0.0,
+   "paired_se": 0.0,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.060400669642888205,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -41.376061712435146,
+   "seconds": 26.10081696510315,
+   "same_fingerprint": true
+  },
+  {
+   "name": "concat__seed42__folds18-19__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 42,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -53.333010351061205,
+   "per_wing_nll": {
+    "18N": -48.929965023504415,
+    "19N": -57.73605567861799
+   },
+   "paired_vs_champion": 12.66624366642802,
+   "paired_se": 6.828046457074716,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.07007141682579793,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -25.564011741150473,
+   "seconds": 18.53807044029236,
+   "same_fingerprint": true
+  },
+  {
+   "name": "concat__seed43__folds18-19__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 43,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -50.07131255469598,
+   "per_wing_nll": {
+    "18N": -36.929559974496705,
+    "19N": -63.21306513489526
+   },
+   "paired_vs_champion": 15.927941462793239,
+   "paired_se": 1.910660795567775,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.13091163259854333,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -25.671612790665407,
+   "seconds": 18.55637550354004,
+   "same_fingerprint": true
+  },
+  {
+   "name": "profile-student_t__shape-two_sided__width-amplitude",
+   "kind": "candidate",
+   "fitted_parameters": 13,
+   "seed": null,
+   "epochs": null,
+   "lr": null,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -48.24340748730276,
+   "per_wing_nll": {
+    "18N": -52.02294829325098,
+    "19N": -44.463866681354546
+   },
+   "paired_vs_champion": 17.75584653018646,
+   "paired_se": 15.010632590579716,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.11325970414491099,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -34.891037635565525,
+   "seconds": 14.2335786819458,
+   "same_fingerprint": true
+  },
+  {
+   "name": "film__seed43__folds18-19__ep8__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 898,
+   "seed": 43,
+   "epochs": 8,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -46.025958694473786,
+   "per_wing_nll": {
+    "18N": -46.09671787350072,
+    "19N": -45.95519951544685
+   },
+   "paired_vs_champion": 19.973295323015435,
+   "paired_se": 11.301850963658438,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.10268577467758966,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -27.177023887688975,
+   "seconds": 60.727097034454346,
+   "same_fingerprint": true
+  },
+  {
+   "name": "baseline",
+   "kind": "ablation",
+   "fitted_parameters": 10,
+   "seed": null,
+   "epochs": null,
+   "lr": null,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -41.76760207248764,
+   "per_wing_nll": {
+    "18N": -50.755829727777304,
+    "19N": -32.77937441719798
+   },
+   "paired_vs_champion": 24.23165194500158,
+   "paired_se": 20.219319439921165,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.1134796680819059,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -33.092178456201935,
+   "seconds": 3.6825525760650635,
+   "same_fingerprint": true
+  },
+  {
+   "name": "none__seed43__folds18-19__ep4__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 610,
+   "seed": 43,
+   "epochs": 4,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -37.42384844670789,
+   "per_wing_nll": {
+    "18N": -48.81759190384067,
+    "19N": -26.03010498957511
+   },
+   "paired_vs_champion": 28.57540557078133,
+   "paired_se": 22.62483524176428,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.12740048159808032,
+   "ks_not_rejected_5pct": 1,
+   "in_sample_nll": -19.139306546049248,
+   "seconds": 17.083744049072266,
+   "same_fingerprint": true
+  },
+  {
+   "name": "film__seed42__folds18-19__ep8__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 898,
+   "seed": 42,
+   "epochs": 8,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -26.724785645556537,
+   "per_wing_nll": {
+    "18N": -47.46043152822364,
+    "19N": -5.989139762889435
+   },
+   "paired_vs_champion": 39.274468371932684,
+   "paired_se": 31.9667376672986,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.13962086817335495,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -25.912309640037535,
+   "seconds": 62.188289403915405,
+   "same_fingerprint": true
+  },
+  {
+   "name": "concat__seed44__folds18-19__ep12__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 642,
+   "seed": 44,
+   "epochs": 12,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -21.203113948045207,
+   "per_wing_nll": {
+    "18N": -45.040123747885055,
+    "19N": 2.633895851794638
+   },
+   "paired_vs_champion": 44.79614006944401,
+   "paired_se": 35.06810158447134,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.22786724578276313,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -25.60327339492202,
+   "seconds": 18.07548975944519,
+   "same_fingerprint": true
+  },
+  {
+   "name": "none__seed44__folds18-19__ep4__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 610,
+   "seed": 44,
+   "epochs": 4,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -14.267027285587853,
+   "per_wing_nll": {
+    "18N": -48.60291643800683,
+    "19N": 20.068861866831124
+   },
+   "paired_vs_champion": 51.73222673190137,
+   "paired_se": 45.56698093705048,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.22263376839968813,
+   "ks_not_rejected_5pct": 1,
+   "in_sample_nll": -18.633267270012517,
+   "seconds": 17.9490008354187,
+   "same_fingerprint": true
+  },
+  {
+   "name": "film__seed44__folds18-19__ep8__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 898,
+   "seed": 44,
+   "epochs": 8,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -9.409481238628743,
+   "per_wing_nll": {
+    "18N": 45.03385927225324,
+    "19N": -63.852821749510724
+   },
+   "paired_vs_champion": 56.58977277886048,
+   "paired_se": 43.21224872625047,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.19459054657881303,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -27.713344431879655,
+   "seconds": 60.26304268836975,
+   "same_fingerprint": true
+  },
+  {
+   "name": "none__seed42__folds18-19__ep4__lr3e-03__w16x3__wsd3ed2f",
+   "kind": "neural",
+   "fitted_parameters": 610,
+   "seed": 42,
+   "epochs": 4,
+   "lr": 0.003,
+   "scored_wings": [
+    "18N",
+    "19N"
+   ],
+   "held_out_nll": -7.5075169048107675,
+   "per_wing_nll": {
+    "18N": -48.159480233728786,
+    "19N": 33.14444642410725
+   },
+   "paired_vs_champion": 58.49173711267846,
+   "paired_se": 51.883055113549524,
+   "wings_better_than_champion": 0,
+   "ks_median": 0.28010146409799375,
+   "ks_not_rejected_5pct": 0,
+   "in_sample_nll": -18.550683761104757,
+   "seconds": 16.90545153617859,
+   "same_fingerprint": true
+  }
+ ],
+ "printed": {
+  "agreement": "largest disagreement with the numpy likelihood, over 4 wings:\n   float64  1.421e-14 nats per hemicycle-year\n   float32  1.513e-05 nats per hemicycle-year\nThe effects this week measures are tenths of a nat, so float32 is safe to train in and float64\nis what we score in. That is a measurement, not a hope.\n",
+  "warm_start": "warm start: 300 epochs in 11.2 s · mean squared error 97.45 -> 0.2178 in log B\none field for all 4 wings cannot do better than 0.1115, which is how much the 4 belts differ from each other.\nSo the copy is essentially perfect — the eighteen Week 3 belts are the same shape scaled by\namplitude, and in log B that is a small shift against a range of fifteen. Which raises the\nquestion Section 3 answers: if one field can copy them all, why would it need to know the wing?\n",
+  "unconditional": "300 epochs in 27.9 s on cpu · 46.5 ms per epoch · 609 weights + 1 global log c\nthis notebook trains 18 fields in all, so budget roughly 8 min of training from here.\nin sample  -30.4472 against the champion's  -41.3761\nA field with thousands of parameters, losing in sample to one with eleven. It is not short of\nflexibility — it is short of the one thing it has not been told: which wing it is looking at.\n",
+  "budget_and_leak": "unconditional field, trained on 3 wings, watched on cycle 13:\n   training     -35.7623 ->  -39.3686\n   validation    -3.0682 ->   -1.7649, best   -7.9936 at epoch 3\n\nstopping on the scored wing instead of the budget: -1.8677 nats per hemicycle-year, free, for one line of code.\nCompare it in Section 5 with what the honest difference between two models looks like.\n",
+  "learning_rate_and_budgets": "learning rate 3e-03 of (0.0003, 0.003, 0.03), chosen on cycle 13 · tied within 0.05 nats: ['3e-03']\n   lr 3e-04: training  -49.3786 · best monitored   -7.6354 at epoch   97 · ends at    2.2387\n   lr 3e-03: training  -51.0097 · best monitored   -9.5551 at epoch   12 · ends at    7.1111\n   lr 3e-02: training  130.3723 · best monitored   -6.2420 at epoch    0 · ends at   86.4169\n\nnone    one field for every wing: is amplitude needed?       training  -39.3686 · cycle 13   -7.9936 at    4 epochs\nconcat  log A and hemisphere appended to the coordinates     training  -51.0097 · cycle 13   -9.5551 at   12 epochs\nfilm    log A reshapes every layer: does that help?          training  -52.7043 · cycle 13  -10.4471 at    8 epochs\n\nThose are sixteen wings trained and two watched, so they are not comparable with the\nparametric scores. Section 5 is where models get compared.\n",
+  "chosen_field_counts": "19N: observed  1590 events · network expects   1490.9\n13N: observed   716 events · network expects    617.0\n",
+  "neural_runs_and_seed_spread": "none    held out   -7.5075 ·    17 s · 610 parameters\nconcat  held out  -53.3330 ·    19 s · 642 parameters\nfilm    held out  -26.7248 ·    62 s · 898 parameters\n\nseeds (42, 43, 44) on cycle 18: -48.9300 -36.9296 -45.0401 · spread 6.1227 nats per hemicycle-year\nAny difference below that spread is a tie, whatever the paired standard error says.\n",
+  "board": "                    kind  fitted seed epochs  held_nll   spread   paired       se   median better      ks ks_ok   in_nll\nmodel                                                                                                                   \nchampion       candidate      15    —      —  -65.9993  15.8832   0.0000   0.0000   0.0000    0/2  0.0604   0/2 -41.3761\nneural concat     neural     642   42     12  -53.3330   6.2268  12.6662   6.8280  12.6662    0/2  0.0701   0/2 -25.5640\nbaseline        ablation      10    —      —  -41.7676  12.7113  24.2317  20.2193  24.2317    0/2  0.1135   0/2 -33.0922\nneural film       neural     898   42      8  -26.7248  29.3246  39.2745  31.9667  39.2745    0/2  0.1396   0/2 -25.9123\nneural none       neural     610   42      4   -7.5075  57.4906  58.4917  51.8831  58.4917    0/2  0.2801   0/2 -18.5507\n\nbest neural variant: concat · paired against the champion +12.6662 +/- 6.8280 nats per hemicycle-year on 2 wings\nseed spread 6.1227 · the stopping leak Section 3 measured -1.8677 · Section 3's tie threshold was 0.05\nSign convention, unchanged since Week 3: a negative paired difference means the model on the\nleft of the subtraction predicts better.\n",
+  "plausibility": "cycle 18, held out · network:\n           observed  predicted  simulated  centroid_obs  centroid_model  spread_obs  spread_model  accepted\nhemicycle                                                                                                  \n18N            1138   1195.383       1212        15.182          16.199       6.695          7.85      0.09\n\nchampion, same cycle:\n           observed  predicted  simulated  centroid_obs  centroid_model  spread_obs  spread_model\nhemicycle                                                                                        \n18N            1138   1057.541       1129        15.182          15.365       6.695         7.185\n",
+  "field_diagnostics": "envelope peak against log A, fitted slope in years per log-amplitude:\n   Week 3 belt         -0.000 yr per unit log A   (peak at mean A: -0.72 yr)\n   champion            -1.706 yr per unit log A   (peak at mean A: -0.18 yr)\n   neural concat       -0.976 yr per unit log A   (peak at mean A: -0.18 yr)\n\nthe champion's own fitted shift: c1 = -2.636 yr per log amplitude\n\nbelt centre at s = 0, where the clock's gauge puts 15.0 deg (the champion's fitted mu_a is 12.85 deg):\n   Week 3 belt         14.5 deg\n   champion            12.8 deg\n   neural concat       16.2 deg\n",
+  "extension": "variant  seed  held_nll  vs_champion  better  wings\n   none    42    -7.508       58.492       0      2\n   none    43   -37.424       28.575       0      2\n   none    44   -14.267       51.732       0      2\n concat    42   -53.333       12.666       0      2\n concat    43   -50.071       15.928       0      2\n concat    44   -21.203       44.796       0      2\n   film    42   -26.725       39.274       0      2\n   film    43   -46.026       19.973       0      2\n   film    44    -9.409       56.590       0      2\n\n         held_mean  held_sd  vs_champion_mean  vs_champion_sd  wins_over_champion  wings_scored\nvariant                                                                                        \nconcat     -41.536   17.684            24.463          17.684                   0             6\nfilm       -27.387   18.317            38.613          18.317                   0             6\nnone       -19.733   15.689            46.266          15.689                   0             6\n\nmy Week 4 model (13 fitted numbers): held out -48.2434 · vs course champion +17.7558 (better on 0/2 wings)\nTaste profile: 2 scored wings per seed. Read every number here as a direction, not a result.\n\nwhat the likelihood changed, on 19N (centre and last finite ridge time) and over all 4 wings (timing slope, yr per unit log A):\n                          centre_at_s0  last_ridge_s  timing_slope\nWeek 3 belt (the target)         14.50        11.000        -0.000\nwarm-start copy, 0 steps         16.50         6.325        -0.076\ntrained, 12 steps                16.25         5.985        -0.976\nA feature already present in the warm-start copy was inherited from the regression, not learned from events.\n"
+ }
+}
